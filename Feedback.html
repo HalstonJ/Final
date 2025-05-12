@@ -85,22 +85,6 @@
         form input[type="submit"]:hover {
             background-color: #ff4500;
         }
-
-        h2 {
-            color: white;
-            margin-top: 20px;
-        }
-
-        #resultText {
-            color: aqua;
-            font-size: 18px;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            margin: 20px auto;
-            text-align: left;
-        }
     </style>
 </head>
 <body>
@@ -115,7 +99,7 @@
         </ul>
     </nav>
 
-    <form id="myform" action="https://formsubmit.co/julichhalston@gmail.com" method="POST" onsubmit="generateMadLib(event)">
+    <form id="myform" action="https://formsubmit.co/julichhalston@gmail.com" method="POST">
         <label for="favPart">What was your favorite part about my website?</label><br>
         <textarea id="favPart" name="favPart" rows="5"></textarea><br>
 
@@ -151,38 +135,5 @@
 
         <input type="submit" value="Submit">
     </form>
-
-    <h2>Feedback:</h2>
-    <p id="resultText"></p>
-
-    <script>
-        function generateMadLib(event) {
-            event.preventDefault();
-
-            let favoritePart = document.getElementById('favPart').value;
-            let leastFavorite = document.getElementById('leastFav').value;
-            let favoritePet = document.getElementById('favPet').value;
-            let favPage = document.querySelector('input[name="favPage"]:checked')?.value || "No page selected";
-            let favproject = Array.from(document.querySelectorAll('input[name="favproject"]:checked')).map(checkbox => checkbox.value);
-
-            document.getElementById('resultText').innerHTML = `
-                Thank you for visiting my website! Here's what you shared:<br><br>
-                Favorite part: ${favoritePart}.<br>
-                Least favorite: ${leastFavorite}.<br>
-                Favorite pet: ${favoritePet}.<br>
-                Favorite page: ${favPage}.<br>
-                Favorite project(s): ${favproject.join(", ")}.<br>
-                Thank you for the feedback!
-            `;
-
-            setTimeout(() => {
-                // Submit the form after displaying the feedback message
-                document.getElementById('myform').submit();
-                
-                // Redirect to the desired page
-                window.location.href = "https://halstonj.github.io/FinalPortfolio/";
-            }, 5000);  // Adjust the delay time if necessary
-        }
-    </script>
 </body>
 </html>
