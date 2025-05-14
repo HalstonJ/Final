@@ -104,7 +104,7 @@ h2 a:hover {
 }
 
 h3 a {
-    color: rgb(72, 0, 255);
+    color: rgb(225, 255, 0);
     font-size: 36px;
     transition: background-color 0.3s, color 0.3s, font-size 0.3s;
 }
