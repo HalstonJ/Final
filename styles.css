@@ -13,13 +13,28 @@ body {
 h1 {
     font-size: 40px;
     color: rgb(255, 136, 8);
-    background: linear-gradient(to right, #000000, #494949, #808080);
+    background: linear-gradient(270deg, #000000, #494949, #808080,white);
+    background-size: 400% 400%;
+    animation: h1GradientAnimation 8s ease infinite;
     width: 50%;
     margin: 0 auto;
     padding: 25px;
-    background-clip: content-box;
     text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.2);
 }
+
+/* Thanks GPT! (nav animation)*/
+@keyframes h1GradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 h3 {
     font-size: 40px;
@@ -34,11 +49,26 @@ h2 {
 }
 
 nav {
-    background: linear-gradient(to right, #7300ff, #00ffbf, #ffaa00);
+    background: linear-gradient(270deg, #7300ff, #00ffbf, #ffaa00);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Thanks GPT! */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     justify-content: center;
     padding: 0;
@@ -73,41 +103,67 @@ h2 a:hover {
     font-size: 66px;
 }
 
+h3 a {
+    color: rgb(72, 0, 255);
+    font-size: 36px;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+
+h3 a:hover {
+    color: rgb(0, 253, 139);
+    text-shadow: 2px 2px 2px rgba(255, 0, 195, 0.96);
+    font-size: 66px;
+}
+
 table {
     height: 600px;
     margin: 0 auto;
 }
 
 .image-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     gap: 20px;
-    padding: 20px;
-    justify-items: center;
-    align-items: center;
-    margin-top: 40px;
+    margin-top: 80px;
     width: 100%;
     max-width: 1200px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin: 0 auto;
 }
 
 .image-item {
     text-align: center;
     max-width: 300px;
     width: 100%;
+    color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .image-item p {
     font-family: 'Tagesschrift', sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
+    line-height: 1.6;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    color: #333;
 }
 
 .image-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    margin-bottom: 10px;
 }
